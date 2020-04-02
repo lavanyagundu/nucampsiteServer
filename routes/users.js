@@ -1,14 +1,27 @@
 const express = require('express');
 const User = require('../models/user');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 const authenticate = require('../authenticate');
 
 const  router = express.Router();
 
+router.use(bodyParser.json());
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', authenticate.verifyUser,authenticate.verifyAdmin,  (req, res, next) => {
+  console.log(req);
+    User.find()
+       
+      .then(users => {
+        res.statusCode =200;
+        res.setHeader('Content-Type','application/json');
+        res.json(users);
+    })
+    .catch(err => next(err));
+       
+
 });
 
 // creates a new user on DB users collection
