@@ -1,0 +1,7 @@
+[
+	{"_id": "5e837d271c0ad031109cf6c8"},
+	{"_id": "5e88a58e4cc9d025accb6bcd"}
+]
+
+From Instructor (Workshop NODE 01) to Everyone:  10:38 AM
+[{"_id":"campsite ObjectId"},  . . . , {"_id":"campsite ObjectId"}]
